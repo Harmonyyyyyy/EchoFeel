@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EchoFeel — Emotions in Motion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="background-orb orb-one"></div>
+    <div class="background-orb orb-two"></div>
+    <div class="background-orb orb-three"></div>
+
+    <header class="hero shell">
+      <nav class="topbar">
+        <div class="brand">
+          <span class="brand-mark">◌</span>
+          <span>EchoFeel</span>
+        </div>
+        <a class="ghost-button" href="#composer">Try the concept</a>
+      </nav>
+
+      <div class="hero-grid">
+        <section class="hero-copy">
+          <p class="eyebrow">Creative social communication</p>
+          <h1>Post a feeling. Pair it with music. Watch it evolve.</h1>
+          <p class="lede">
+            EchoFeel is a social space for honest emotion, anonymous expression,
+            and slow transformation. Every post becomes a living mood capsule that
+            fades, shifts, and reveals new layers over time.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-button" href="#feed">Explore evolving echoes</a>
+            <a class="secondary-button" href="#principles">Why it feels different</a>
+          </div>
+
+          <dl class="hero-stats">
+            <div>
+              <dt>0</dt>
+              <dd>likes to chase</dd>
+            </div>
+            <div>
+              <dt>100%</dt>
+              <dd>emotion-first posts</dd>
+            </div>
+            <div>
+              <dt>∞</dt>
+              <dd>possible transformations</dd>
+            </div>
+          </dl>
+        </section>
+
+        <aside class="signal-card">
+          <div class="signal-header">
+            <span class="signal-live">live pulse</span>
+            <span class="signal-time">updates every few seconds</span>
+          </div>
+          <div class="signal-wave" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <h2>Today’s strongest shared feeling</h2>
+          <p class="signal-feeling">Tender optimism with a trace of midnight nostalgia.</p>
+          <div class="signal-tags">
+            <span>anonymous</span>
+            <span>music-linked</span>
+            <span>evolving</span>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section id="principles" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Core experience</p>
+          <h2>Designed for meaning instead of metrics</h2>
+        </div>
+        <div class="principles-grid">
+          <article class="glass-card">
+            <h3>Emotion-led posting</h3>
+            <p>
+              Users share short emotional messages and attach a song, ambient loop,
+              or sonic texture that deepens the feeling.
+            </p>
+          </article>
+          <article class="glass-card">
+            <h3>Anonymous by default</h3>
+            <p>
+              EchoFeel lowers performance pressure so people can express what they
+              actually feel, not just what looks polished online.
+            </p>
+          </article>
+          <article class="glass-card">
+            <h3>Posts that transform</h3>
+            <p>
+              Every echo can bloom, blur, soften, or fade based on time, mood, and
+              community resonance.
+            </p>
+          </article>
+          <article class="glass-card">
+            <h3>No follower economy</h3>
+            <p>
+              Connection happens through emotional alignment, shared soundtracks,
+              and thoughtful responses rather than public scores.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="composer" class="section composer-section">
+        <div class="section-heading">
+          <p class="eyebrow">Prototype composer</p>
+          <h2>Create a new echo</h2>
+        </div>
+        <div class="composer-layout">
+          <form id="echo-form" class="glass-card composer-card">
+            <label>
+              <span>Feeling message</span>
+              <textarea id="message" maxlength="180" placeholder="I miss the version of me that danced without thinking..."></textarea>
+            </label>
+            <label>
+              <span>Music pairing</span>
+              <input id="track" type="text" maxlength="80" placeholder="Track, artist, or mood soundtrack" />
+            </label>
+            <label>
+              <span>Transformation arc</span>
+              <select id="arc">
+                <option value="fade">Fade gently into silence</option>
+                <option value="bloom">Bloom into a brighter version</option>
+                <option value="drift">Drift into something dreamlike</option>
+              </select>
+            </label>
+            <button type="submit" class="primary-button full-width">Send anonymously</button>
+          </form>
+
+          <div class="glass-card preview-card">
+            <p class="preview-label">How EchoFeel treats your post</p>
+            <ol class="timeline">
+              <li><strong>Moment 01:</strong> raw feeling appears with music.</li>
+              <li><strong>Moment 02:</strong> visuals and tone begin to shift.</li>
+              <li><strong>Moment 03:</strong> the post settles into a transformed emotional state.</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section id="feed" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Evolving feed</p>
+          <h2>Anonymous echoes in motion</h2>
+        </div>
+        <div id="echo-feed" class="feed-grid" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <template id="echo-template">
+      <article class="echo-card glass-card">
+        <div class="echo-meta">
+          <span class="echo-track"></span>
+          <span class="echo-phase"></span>
+        </div>
+        <p class="echo-message"></p>
+        <div class="echo-footer">
+          <span class="echo-arc"></span>
+          <span class="echo-timer"></span>
+        </div>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
